@@ -20,19 +20,21 @@ function validPhone(){
 		validPhone();
 		return;
 	}else{
-		for(var i = 0; i < numberCheck.length; i++){
-			if (isNaN(parseFloat((numberCheck[i])))){
-				alert('FALSE! \n Your phone number doesnt have letters in it smarty pants ;]');
-				validPhone();
-				return;
+
+
+		if(count !== 2){
+			alert('FALSE! \n Did you really think you\'d get away with incorrect hyphens!?');
+			validPhone();
+			return;
+		}else{
+			for(var i = 0; i < numberCheck.length; i++){
+				if (isNaN(parseFloat((numberCheck[i])))){
+					alert('FALSE! \n Your phone number doesnt have letters in it smarty pants ;]');
+					validPhone();
+					return;
+				}
 			}
 		}
-	}
-
-	if(count !== 2){
-		alert('FALSE! \n Did you really think you\'d get away with incorrect hyphens!?');
-		validPhone();
-		return;
 	}
 
 	alert('TRUE! \n Thanks for entering a real number!');
